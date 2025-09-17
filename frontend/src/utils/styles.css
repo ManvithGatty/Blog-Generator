@@ -1,5 +1,128 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #eeeeee;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #00adb5;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Main container */
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Textarea */
+.textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  resize: none;
+  outline: none;
+  transition: border 0.2s ease-in-out;
+}
+
+.textarea:focus {
+  border-color: #00adb5;
+}
+
+/* Button */
+.btn {
+  background: #222831;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background: #393e46;
+}
+
+.btn:disabled {
+  background: #222831;
+  cursor: not-allowed;
+}
+
+/* Loading Spinner */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #fff;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loading text */
+.loading-text {
+  margin-top: 10px;
+  font-style: italic;
+  color: #393e46;
+}
+
+/* Blog section */
+.blog h1 {
+  margin-top: 20px;
+  font-size: 1.8rem;
+  color: #005792;
+  margin-bottom: 10px;
+}
+
+.blog h2 {
+  font-size: 1.4rem;
+  margin-top: 20px;
+  color: #3f72af;
+}
+
+.blog p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.blog ul,
+.blog ol {
+  margin-left: 20px;
+  margin-bottom: 12px;
+}
+
+.blog li {
+  margin-bottom: 6px;
 }

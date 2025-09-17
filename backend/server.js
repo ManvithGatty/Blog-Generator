@@ -23,7 +23,14 @@ app.post("/blog", async function (req, res) {
     // Gemini 2.5 flash model
     const model = ai.getGenerativeModel({ model: "gemini-2.5-flash" });
     const result = await model.generateContent(
-      `Write a detailed, structured, 1000-word blog about: ${prompt}`
+      `
+        Write a detailed, engaging 1000-word blog post on the topic: "${prompt}". 
+        Output should be in proper Markdown format:
+        - Use # for the main title, ## for subheadings
+        - Separate paragraphs with blank lines
+        - Use bullet points or numbered lists where appropriate
+        - Use **bold** or *italics* where needed for emphasis
+      `
     );
 
     const text = result.response.text();
