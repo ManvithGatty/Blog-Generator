@@ -9,7 +9,11 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const ai = new GoogleGenerativeAI(GEMINI_API_KEY);
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: "https://blog-generator-uqdk.vercel.app", // frontend URL
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"]
+}));
 app.use(express.json());
 
 // POST - Blog generation
