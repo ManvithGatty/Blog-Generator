@@ -45,7 +45,7 @@ function App() {
         </button>
 
         {loading && (
-          <p className="loading-text">Generating your blog, please wait...</p>
+          <p className="loading-text">Generating your blog, it may take a while...</p>
         )}
 
         {/* Blog section*/}
