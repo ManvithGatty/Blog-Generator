@@ -15,7 +15,7 @@ function App() {
     setBlog("");
 
     try {
-      const response = await axios.post("http://localhost:5000/blog", {
+      const response = await axios.post("https://blog-generator-bb18.onrender.com/blog", {
         prompt,
       });
       setBlog(response.data.blog);
