@@ -1,7 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import axios from "axios";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 dotenv.config();
@@ -21,10 +20,13 @@ app.post("/blog", async function (req, res) {
       return res.status(400).json({ message: "Prompt required!" });
     }
 
+    // Gemini 2.5 flash model
     const model = ai.getGenerativeModel({ model: "gemini-2.5-flash" });
-    const result = await model.generateContent(prompt);
-    const response = result.response;
-    const text = response.text();
+    const result = await model.generateContent(
+      `Write a detailed, structured, 1000-word blog about: ${prompt}`
+    );
+
+    const text = result.response.text();
 
     return res.json({
       blog: text,
