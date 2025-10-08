@@ -25,7 +25,7 @@ app.post("/blog", async function (req, res) {
     }
 
     // Gemini 2.5 flash model
-    const model = ai.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = ai.getGenerativeModel({ model: "gemini-2.5-flash" });
     const result = await model.generateContent(
       `
         Write a detailed, engaging 1000-word blog post on the topic: "${prompt}". 
